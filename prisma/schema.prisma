@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Character {
+  id        String   @id @default(uuid())
+  name      String
+  games     Game[]
+  createdAt DateTime @default(now())
+}
+
+model Game {
+  id          String   @id @default(uuid())
+  won         Boolean
+  playedAt    DateTime @default(now())
+  character   Character @relation(fields: [characterId], references: [id], onDelete: Cascade)
+  characterId String
+}
