@@ -1,4 +1,5 @@
 import { prisma } from '$lib/prisma';
+import { redirect } from '@sveltejs/kit';
 
 export const actions = {
   create: async ({ request }) => {
@@ -10,6 +11,6 @@ export const actions = {
       data: { name }
     });
 
-    return { success: true };
+    throw redirect(302, "/characters")
   }
 };

@@ -3,9 +3,30 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 		%sveltekit.head%
+		<style>
+			body {
+				font-family: 'VT323', monospace !important;
+				font-size: 1.25rem;
+				background-color: #000;
+				color: #fff;
+			}
+			h1, h2, h3 {
+				font-family: 'VT323', monospace !important;
+			}
+			input {
+				background-color: #000;
+				color: #fff;
+			}
+			input::placeholder {
+				color: #666;
+			}
+		</style>
 	</head>
-	<body data-sveltekit-preload-data="hover">
+	<body data-sveltekit-preload-data="hover" class="antialiased text-white bg-black uppercase tracking-widest selection:bg-white selection:text-black">
 		<div style="display: contents">%sveltekit.body%</div>
 	</body>
 </html>
