@@ -1,6 +1,6 @@
 <script>
   let { data } = $props();
-  const { characters } = data;
+  let characters = $derived(data.characters);
 </script>
 
 <div class="flex items-center justify-between mb-8 pb-4 border-b border-gray-800">

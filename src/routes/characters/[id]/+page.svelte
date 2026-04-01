@@ -2,7 +2,7 @@
     import { enhance } from '$app/forms';
     
     let { data } = $props();
-    const { character } = data;
+    let character = $derived(data.character);
     
     let totalGames = $derived(character.games.length);
     let wins = $derived(character.games.filter(g => g.won).length);
